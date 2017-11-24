@@ -1,0 +1,70 @@
+#albums {
+  .album {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    &__pictures {
+      float:left;
+      margin-top: 30px;
+      width:100%;
+      .photo {
+        border:1px solid $gray-light;
+        padding:5px;
+        background-color: #ffffff;
+        position: relative;
+        width:160px;
+        height:160px;
+        &:last-child {
+          z-index:-1;
+          transform: translate(10px, -100%) rotate(10deg);
+        }
+      }
+    }
+    &__description {
+      float:left;
+      width:100%;
+      h3 {
+        color: $theme-secondary;
+        font-size: 55px;
+        font-weight: bold;
+      }
+    }
+  }
+  .album-controls {
+    padding:0;
+    li {
+      list-style: none;
+      border-bottom: 3px solid $line-shade;
+      line-height:36px;
+      a {
+        color: $gray-dark;
+        &.selected {
+          color: $theme-secondary;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    display: none;
+    &.slick-next {
+      @include button-image(104px, 104px, '../img/arrowdown.png');
+      background-color: $gray;
+      left: 50%;
+      margin-left: -52px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .album {
+      width: 800px;
+      height: 450px;
+      &__pictures, &__description {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+// Styling for the navbar
+#mainNav {
+  padding: 0;
+  border-color: fade-out($gray-darker, .95);
+  background-color: white;
+  min-height: 65px;
+  @include sans-serif-font;
+  @include transition-all;
+  .navbar-brand {
+    display: block;
+    text-indent: -9999px;
+    background-size: 100%;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    z-index: 2;
+    margin-left:10px;
+  }
+  .navbar-toggle {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $gray-darker;
+  }
+  .navbar-nav {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    > li.nav-item {
+      > a.nav-link:focus,
+      > a.nav-link {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $gray-darker;
+        &:hover {
+          color: $theme-secondary;
+        }
+        &.active {
+          color: $theme-secondary !important;
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  .navbar-toggler {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+  }
+
+  @media (min-width: 992px) {
+    height: 105px;
+    border-color: fade-out(white, .7);
+    .navbar-brand {
+      width: 134px;
+      height: 134px;
+      top: 10px;
+      margin-left:0px;
+    }
+    .navbar-nav {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    .navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus {
+      color: $gray-darker;
+      &:hover {
+        color: $theme-secondary;
+      }
+    }
+    &.navbar-shrink {
+      border-color: fade-out($gray-darker, .95);
+      background-color: white;
+      .navbar-brand {
+        font-size: 16px;
+        color: $theme-primary;
+        &:focus,
+        &:hover {
+          color: $theme-secondary;
+        }
+      }
+      .navbar-nav > li.nav-item > a.nav-link,
+      .navbar-nav > li.nav-item > a.nav-link:focus {
+        color: $gray-darker;
+        &:hover {
+          color: $theme-secondary;
+        }
+      }
+    }
+  }
+}

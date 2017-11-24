@@ -1,0 +1,20 @@
+.service-box {
+  max-width: 400px;
+  margin: 50px auto 0;
+  .service-box__number {
+    color: $theme-secondary;
+    font-size: 55px;
+    font-weight: bold;
+    border-bottom: 3px solid $line-shade;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 992px) {
+    margin: 20px auto 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
